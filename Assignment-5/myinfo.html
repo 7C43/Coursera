@@ -1,0 +1,16 @@
+<!-- myinfo.html -->
+<div ng-controller="MyInfoController as myInfoCtrl">
+    <div ng-if="myInfoCtrl.user.firstName">
+      <p>First Name: {{ myInfoCtrl.user.firstName }}</p>
+      <p>Last Name: {{ myInfoCtrl.user.lastName }}</p>
+      <p>Email: {{ myInfoCtrl.user.email }}</p>
+      <p>Phone: {{ myInfoCtrl.user.phone }}</p>
+      <p>Favorite Dish: {{ myInfoCtrl.favoriteDish.name }}</p>
+      <img ng-src="{{ myInfoCtrl.favoriteDish.image }}" alt="{{ myInfoCtrl.favoriteDish.name }}">
+      <p>{{ myInfoCtrl.favoriteDish.description }}</p>
+    </div>
+    <div ng-if="!myInfoCtrl.user.firstName">
+      <p>Not Signed Up Yet. <a href="#!/signup">Sign up Now!</a></p>
+    </div>
+  </div>
+  

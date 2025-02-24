@@ -1,0 +1,28 @@
+<!-- signup.html -->
+<div ng-controller="SignUpController as signUpCtrl" class="form">
+    <form name="signUpForm" ng-submit="signUpCtrl.submitForm(signUpForm)" novalidate>
+      <label>First Name:</label>
+      <input type="text" name="firstName" ng-model="signUpCtrl.user.firstName" required>
+      <span ng-show="signUpForm.firstName.$touched && signUpForm.firstName.$invalid">First Name is required.</span>
+  
+      <label>Last Name:</label>
+      <input type="text" name="lastName" ng-model="signUpCtrl.user.lastName" required>
+      <span ng-show="signUpForm.lastName.$touched && signUpForm.lastName.$invalid">Last Name is required.</span>
+  
+      <label>Email:</label>
+      <input type="email" name="email" ng-model="signUpCtrl.user.email" required>
+      <span ng-show="signUpForm.email.$touched && signUpForm.email.$invalid">Valid Email is required.</span>
+  
+      <label>Phone Number:</label>
+      <input type="tel" name="phone" ng-model="signUpCtrl.user.phone" required>
+      <span ng-show="signUpForm.phone.$touched && signUpForm.phone.$invalid">Phone Number is required.</span>
+  
+      <label>Favorite Dish:</label>
+      <input type="text" name="favoriteDish" ng-model="signUpCtrl.user.favoriteDish" required>
+      <span ng-show="signUpForm.favoriteDish.$touched && signUpForm.favoriteDish.$invalid">Favorite Dish is required.</span>
+      <span ng-show="signUpCtrl.invalidDish">No such menu number exists.</span>
+  
+      <button type="submit">Submit</button>
+    </form>
+    <p ng-show="signUpCtrl.saved">Your information has been saved.</p>
+  </div>
